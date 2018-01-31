@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "redux-chat-room",
+    "chat-room": "redux-chat-room"
+  }
+}
