@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import reducer from './reducers'
 
 import './index.css';
+import './main.css';
 
 var redux = require('redux');
 
