@@ -9,6 +9,15 @@ const messages = (state = [], action) => {
           photoUrl: action.item.photoUrl
         }
       ]
+    case 'ADD_IMAGE':
+      return [
+        ...state,
+        {
+          imageUrl: action.item.imageUrl,
+          name: action.item.name,
+          photoUrl: action.item.photoUrl
+        }
+      ]
     default:
       return state
   }

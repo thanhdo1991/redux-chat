@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/header'
 import ShowMessage from './containers/ShowMessage'
 import AddMessage from './containers/AddMessage'
+import AddImage from './containers/AddImage'
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
 
                   <ShowMessage />
                   <AddMessage />
+                  <AddImage />
                 </div>
               </div>
 
