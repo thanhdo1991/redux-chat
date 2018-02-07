@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { addMessage } from '../actions'
 import users from '../usersAPI';
 
-let AddMessage = ({ dispatch }) => {
+let AddMessage = ({ dispatch, isLogin }) => {
   let message;
   // Fake user.
   const user = users[Math.floor(Math.random() * users.length)];
@@ -24,13 +24,15 @@ let AddMessage = ({ dispatch }) => {
         <input className="mdl-textfield__input" type="text" id="message" ref={el => {message = el}} />
         <label className="mdl-textfield__label" htmlFor="message">Message...</label>
       </div>
-      <button id="submit" disabled type="submit" className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <button id="submit" disabled={!isLogin} type="submit" className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
         Send
       </button>
     </form>
   )
 }
 
-AddMessage = connect()(AddMessage)
+AddMessage = connect(function(state){
+  return {isLogin : state.isLogin, }
+})(AddMessage)
 
 export default AddMessage
